@@ -12,26 +12,18 @@ package main
 
 // Импортируемые пакеты
 import (
-	"fmt"
-	"time" // <= пакеты стандартной библиотеки импортируется без указания пути, Go сам знает, где его искать
+	"fmt" // <= пакеты стандартной библиотеки импортируются без указания пути, Go сам знает, где его искать
+	"time"
 
-	"github.com/semyon-dev/stepik-go/gopher" // <= это пакет не из стандартной библиотеки, к нему указан путь
-	/*
-	 * stepik-go - корневая директория модуля
-	 * gopher - поддиректория, в которой находится пакет gopher
-	 */
-
-	log "github.com/ivahaev/go-logger" // <= этот пакет тоже не из стандартной библиотеки
-	/*
-	 * Мы могли воспользоваться просто fmt или log из стандартной библиотеки, но тогда не увидели бы
-	 * список зависимостей в файле go.mod
-	 */)
+	"github.com/rs/zerolog/log" // <= это пакеты не из стандартной библиотеки, к ним указаны пути
+	"github.com/semyon-dev/stepik-go/gopher"
+)
 
 func main() {
 	fmt.Printf("Program starting in %s\n", time.Now().Format("15:04:05"))
 
 	gopher := gopher.NewGopher()
 	if err := gopher.Go(); err != nil {
-		log.JSON(err)
+		log.Error().AnErr("err", err).Msg("неожиданная ошибка")
 	}
 }
