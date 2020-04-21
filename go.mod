@@ -1,4 +1,4 @@
-module stepik-go
+module github.com/semyon-dev/stepik-go
 
 go 1.14
 
