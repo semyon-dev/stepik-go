@@ -1,0 +1,41 @@
+{
+    "minItems":1,
+    "$schema":"http://json-schema.org/draft-04/schema#",
+    "description":"Общероссийский классификатор видов экономической деятельности ОКВЭД 2 (ОК 029-2014 (КДЕС Ред. 2))",
+    "title":"Общероссийский классификатор видов экономической деятельности ОКВЭД 2 (ОК 029-2014 (КДЕС Ред. 2))",
+    "type":"array",
+    "items":{
+        "description":"Общероссийский классификатор видов экономической деятельности ОКВЭД 2 (ОК 029-2014 (КДЕС Ред. 2))",
+        "type":"object",
+        "properties":{
+            "system_object_id":{
+                "description":"system_object_id",
+                "type":"STRING"
+            },"Kod":{
+                "description":"Код позиции",
+                "type":"STRING"
+            },"is_deleted":{
+                "description":"is_deleted",
+                "type":"NUMBER"
+            },"signature_date":{
+                "description":"signature_date",
+                "type":"STRING"
+            },"Nomdescr":{
+                "description":"Описание",
+                "type":"STRING"
+            },"global_id":{
+                "description":"global_id",
+                "type":"NUMBER"
+            },"Idx":{
+                "description":"Индекс",
+                "type":"STRING"
+            },"Razdel":{
+                "description":"Код раздела",
+                "type":"STRING"
+            },"Name":{
+                "description":"Наименование",
+                "type":"STRING"
+            }
+        },"required":["is_deleted","global_id","Idx"]
+    }
+}
